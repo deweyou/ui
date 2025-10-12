@@ -1,9 +1,9 @@
 name: CI
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "develop" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "develop" ]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,14 +14,24 @@ jobs:
       - name: Git config user
         uses: snow-actions/git-config-user@v1.0.0
         with:
-          name: # Service Account's Name
-          email: # Service Account's Email Address
+          name: Dewey Ou
+          email: oushihao97@gmail.com
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 22.17.0
+      - name: Init Env
+        run: npm install -g pnpm@10.12.4
       - name: Verify Change Logs
         run: node common/scripts/install-run-rush.js change --verify
       - name: Rush Install
         run: node common/scripts/install-run-rush.js install
       - name: Rush rebuild
-        run: node common/scripts/install-run-rush.js rebuild --verbose --production
+        run: node common/scripts/install-run-rush.js rebuild --verbose
+      - name: Check Rush change files
+        run: |
+          if [ -z "$(ls -A common/changes 2>/dev/null)" ]; then
+            echo "❌ No rush change files found. Please run 'rush change' before committing."
+            exit 1
+          else
+            echo "✅ Change files detected."
+          fi
