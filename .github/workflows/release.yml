@@ -34,11 +34,11 @@ jobs:
         run: |
           if [[ "${GITHUB_REF_NAME}" == "develop" ]]; then
             echo "Running prerelease (beta) version bump..."
-            rush version --bump prerelease
+            rush version --override-bump prerelease
             echo "tag=beta" >> $GITHUB_OUTPUT
           elif [[ "${GITHUB_REF_NAME}" == "main" ]]; then
             echo "Running stable (latest) version bump..."
-            rush version --bump patch
+            rush version --override-bump patch
             echo "tag=latest" >> $GITHUB_OUTPUT
           fi
       # ⚙️ 构建所有包
