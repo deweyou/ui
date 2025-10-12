@@ -11,6 +11,12 @@
     {
       "packageName": "@deweyou-ui/react",
       "projectFolder": "packages/react"
+    },
+    {
+      "packageName": "@deweyou-ui/styles",
+      "projectFolder": "packages/styles",
+      "shouldPublish": true,
+      "versionPolicyName": "base-policy"
     }
   ]
 }

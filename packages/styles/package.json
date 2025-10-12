@@ -1,0 +1,42 @@
+{
+  "name": "@deweyou-ui/styles",
+  "version": "0.0.0",
+  "files": [
+    "lib",
+    "README.md",
+    "CHANGELOG.md",
+    "CHANGELOG.json",
+    "package.json"
+  ],
+  "exports": {
+    ".": {
+      "default": "./lib/index.css"
+    },
+    "./index.css": {
+      "default": "./lib/index.css"
+    },
+    "./light.css": {
+      "default": "./lib/light.css"
+    },
+    "./dark.css": {
+      "default": "./lib/dark.css"
+    },
+    "./reset.css": {
+      "default": "./lib/reset.css"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "release": "vite build",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "vite": "npm:rolldown-vite@7.1.12",
+    "@types/node": "~24.5.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "vite": "npm:rolldown-vite@7.1.12"
+    }
+  }
+}
