@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@deweyou-ui/styles",
+      "comment": "init react package & styles package",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@deweyou-ui/styles"
+}
