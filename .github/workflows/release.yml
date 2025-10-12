@@ -1,0 +1,61 @@
+name: Release Packages
+on:
+  push:
+    branches:
+      - develop
+      - main
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+      - name: Git config user
+        uses: snow-actions/git-config-user@v1.0.0
+        with:
+          name: Dewey Ou
+          email: oushihao97@gmail.com
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 22.17.0
+      - name: Init Env
+        run: npm install -g pnpm@10.12.4
+      - name: Install Rush
+        run: npm install -g @microsoft/rush
+      - name: Install dependencies
+        run: rush install
+      # ✅ 检查是否执行过 rush change
+      - name: Verify rush change
+        run: rush change --verify
+      # 🧩 根据分支类型决定版本策略
+      - name: Bump version
+        id: bump
+        run: |
+          if [[ "${GITHUB_REF_NAME}" == "develop" ]]; then
+            echo "Running prerelease (beta) version bump..."
+            rush version --bump prerelease --prerelease-name beta
+            echo "tag=beta" >> $GITHUB_OUTPUT
+          elif [[ "${GITHUB_REF_NAME}" == "main" ]]; then
+            echo "Running stable (latest) version bump..."
+            rush version --bump patch
+            echo "tag=latest" >> $GITHUB_OUTPUT
+          fi
+      # ⚙️ 构建所有包
+      - name: Build all packages
+        run: rush rebuild
+      # 📦 发布到 npm
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          rush publish --from git --publish --tag ${{ steps.bump.outputs.tag }} --set-access-level public
+      # 🪄 提交版本号与 changelog 更新
+      - name: Commit version updates
+        run: |
+          git config user.name "Dewey Ou"
+          git config user.email "oushihao97@gmail.com"
+          git add .
+          git commit -m "chore(release): bump versions and changelogs [skip ci]" || echo "No changes to commit"
+          git push origin HEAD:${GITHUB_REF_NAME}
+ 
