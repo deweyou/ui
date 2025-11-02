@@ -1,35 +1,38 @@
 {
   "name": "@deweyou-ui/styles",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "description": "Shared styles and design tokens for Deweyou UI.",
+  "sideEffects": [
+    "./dist/css/**/*.css"
+  ],
   "exports": {
     ".": {
-      "default": "./lib/index.css"
+      "default": "./dist/css/index.css",
+      "style": "./dist/css/index.css"
     },
-    "./index.css": {
-      "default": "./lib/index.css"
-    },
-    "./light.css": {
-      "default": "./lib/light.css"
-    },
-    "./dark.css": {
-      "default": "./lib/dark.css"
-    },
-    "./reset.css": {
-      "default": "./lib/reset.css"
-    }
+    "./index.css": "./dist/css/index.css",
+    "./reset.css": "./dist/css/reset.css",
+    "./tokens.css": "./dist/css/tokens.css",
+    "./index.scss": "./dist/scss/index.scss",
+    "./reset.scss": "./dist/scss/reset.scss",
+    "./tokens.scss": "./dist/scss/tokens.scss",
+    "./mixins": "./mixins.scss",
+    "./mixins.scss": "./mixins.scss"
   },
+  "main": "./dist/css/index.css",
   "files": [
-    "CHANGELOG.json",
-    "CHANGELOG.md",
-    "README.md",
-    "lib",
-    "package.json"
+    "dist/css",
+    "dist/scss",
+    "mixins.scss"
   ],
   "scripts": {
-    "build": "vite build",
-    "prepublishOnly": "pnpm run build",
-    "lint": "pnpm run lint:eslint && pnpm run lint:stylelint",
-    "lint:eslint": "eslint . --fix",
-    "lint:stylelint": "stylelint . --fix"
+    "clean": "rimraf dist",
+    "build": "pnpm run clean && sass --style=compressed --no-source-map src:dist/css && pnpm run copy:scss",
+    "copy:scss": "node ./scripts/copy-scss.mjs",
+    "lint": "stylelint \"src/**/*.{css,scss}\"",
+    "lint:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
+    "pre-commit": "pnpm run lint:fix",
+    "storybook": "storybook dev -p 7007",
+    "storybook:build": "storybook build"
   }
 }

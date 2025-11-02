@@ -1,13 +1,9 @@
-/** @type {import('stylelint').Config} */
 export default {
-  extends: ["stylelint-config-standard"],
-  ignoreFiles: ["!**/*.css"],
+  extends: ['stylelint-config-standard', 'stylelint-config-standard-scss'],
+  ignoreFiles: ['**/dist/**'],
   rules: {
-    "selector-pseudo-class-no-unknown": [
-      true,
-      {
-        "ignorePseudoClasses": ["global"]
-      }
-    ]
-  }
+    'no-empty-source': null,
+    'no-descending-specificity': null,
+    'selector-class-pattern': null,
+  },
 };
