@@ -1,0 +1,23 @@
+{
+  "name": "@deweyou-ui/config",
+  "version": "1.0.0",
+  "description": "DeweyUI Configuration Package",
+  "keywords": [],
+  "author": "Dewey Ou <oushihao97@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    "./stylelint": "./stylelint.js",
+    "./eslint": "./eslint.js"
+  },
+  "peerDependencies": {
+    "eslint": "*",
+    "stylelint": "*"
+  },
+  "devDependencies": {
+    "eslint": "*",
+    "stylelint": "*",
+    "stylelint-config-standard": "*"
+  }
+}

@@ -1,7 +1,3 @@
 packages:
-  - packages/*
-
-onlyBuiltDependencies:
-  - node
-  - simple-git-hooks
-  - unrs-resolver
+  - '.'
+  - 'packages/*'
