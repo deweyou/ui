@@ -11,6 +11,10 @@
       "import": "./dist/index.css",
       "require": "./dist/index.css"
     },
+    "./index.css": {
+      "import": "./dist/index.css",
+      "require": "./dist/index.css"
+    },
     "./reset.css": {
       "import": "./dist/reset.css",
       "require": "./dist/reset.css"

@@ -1,5 +1,8 @@
 import type { Preview } from '@storybook/react';
 
+// Import DeweyUI styles for all stories
+import '@deweyou-ui/styles';
+
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
