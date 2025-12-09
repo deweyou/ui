@@ -1,6 +1,6 @@
 {
   "name": "@deweyou-ui/styles",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "DeweyUI Styles Package",
   "keywords": [],
   "author": "Dewey Ou <oushihao97@gmail.com>",
@@ -21,12 +21,16 @@
   ],
   "scripts": {
     "build": "vite build",
-    "lint": "stylelint 'src/**/*.css'"
+    "lint": "stylelint 'src/**/*.css'",
+    "prepublishOnly": "pnpm build"
   },
   "dependencies": {},
   "devDependencies": {
     "vite": "*",
     "stylelint": "*",
     "@deweyou-ui/config": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

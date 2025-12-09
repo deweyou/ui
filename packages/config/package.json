@@ -1,6 +1,7 @@
 {
   "name": "@deweyou-ui/config",
-  "version": "1.0.0",
+  "version": "0.0.1",
+  "private": true,
   "description": "DeweyUI Configuration Package",
   "keywords": [],
   "author": "Dewey Ou <oushihao97@gmail.com>",
