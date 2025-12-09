@@ -1,8 +1,7 @@
 /* DeweyUI Styles */
 
 /* Import reset styles */
-@import './reset.css';
+@import url('./reset.css');
 
 /* Import color tokens */
-@import './tokens/colors.css';
-
+@import url('./tokens/colors.css');

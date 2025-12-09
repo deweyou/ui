@@ -1,7 +1,12 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable no-duplicate-selectors */
+
 /* Reset.css - Based on Tailwind CSS preflight.css */
 
 /* 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4) */
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
 
@@ -11,10 +16,12 @@
 }
 
 /* 3. Allow adding a border to an element by just adding a border-width. */
-*, ::before, ::after {
+*,
+::before,
+::after {
   border-width: 0;
   border-style: solid;
-  border-color: currentColor;
+  border-color: currentcolor;
 }
 
 /* 4. Add accessible line-height */
@@ -29,28 +36,46 @@ body {
 }
 
 /* 6. Improve media defaults */
-img, svg, video, canvas, audio, iframe, embed, object {
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
   display: block;
   vertical-align: middle;
 }
 
 /* 7. Remove built-in form typography styles */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
 /* 8. Avoid text overflows */
-h1, h2, h3, h4, h5, h6, p, pre {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre {
   overflow-wrap: break-word;
 }
 
 /* 9. Create a root stacking context */
-#root, #__next {
+#root {
   isolation: isolate;
 }
 
 /* 10. Reset list styles */
-ul, ol {
+ul,
+ol {
   list-style: none;
   padding: 0;
 }
@@ -83,7 +108,6 @@ input[type="tel"],
 input[type="url"],
 input[type="search"],
 textarea {
-  -webkit-appearance: none;
   appearance: none;
   background-color: #fff;
   border-radius: 0;
@@ -91,20 +115,17 @@ textarea {
 
 /* 15. Reset select styles */
 select {
-  -webkit-appearance: none;
   appearance: none;
 }
 
 /* 16. Reset checkbox and radio styles */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-appearance: none;
   appearance: none;
 }
 
 /* 17. Reset progress styles */
 progress {
-  -webkit-appearance: none;
   appearance: none;
 }
 
@@ -118,7 +139,6 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
   -webkit-text-fill-color: inherit;
-  -webkit-box-shadow: 0 0 0 30px white inset;
   box-shadow: 0 0 0 30px white inset;
   transition: background-color 5000s ease-in-out 0s;
 }
@@ -191,7 +211,7 @@ dialog {
 
 /* 29. Reset dialog::backdrop styles */
 dialog::backdrop {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgb(0 0 0 / 50%);
 }
 
 /* 30. Reset blockquote styles */
@@ -281,7 +301,6 @@ time {
 
 /* 43. Reset meter styles */
 meter {
-  -webkit-appearance: none;
   appearance: none;
 }
 

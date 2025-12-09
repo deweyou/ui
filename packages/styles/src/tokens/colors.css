@@ -528,9 +528,9 @@
   --do-color-stone-950-raw: 12, 10, 9;
 
   /* Black and White */
-  --do-color-black: #000000;
+  --do-color-black: #000;
   --do-color-black-raw: 0, 0, 0;
-  --do-color-white: #FFFFFF;
+  --do-color-white: #FFF;
   --do-color-white-raw: 255, 255, 255;
 
   /* Light */
@@ -566,7 +566,7 @@
   --do-color-dark-200-raw: 50, 50, 50;
   --do-color-dark-300: #2D2D2D;
   --do-color-dark-300-raw: 45, 45, 45;
-  --do-color-dark-400: #222222;
+  --do-color-dark-400: #222;
   --do-color-dark-400-raw: 34, 34, 34;
   --do-color-dark-500: #1F1F1F;
   --do-color-dark-500-raw: 31, 31, 31;
