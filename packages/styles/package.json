@@ -26,7 +26,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "vite": "*",
+    "vite": "8.0.0-beta.0",
     "stylelint": "*",
     "@deweyou-ui/config": "workspace:*"
   },

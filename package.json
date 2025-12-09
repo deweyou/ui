@@ -5,12 +5,26 @@
   "author": "Dewey Ou <oushihao97@gmail.com>",
   "license": "MIT",
   "packageManager": "pnpm@10.12.4",
+  "scripts": {
+    "setup": "pnpm install",
+    "build": "pnpm -r --if-present run build",
+    "lint": "pnpm -r --if-present run lint && pnpm -r --if-present run stylelint"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "stylelint": "^16.1.0"
+  },
   "pnpm": {
     "overrides": {
       "vite": "8.0.0-beta.0",
-      "eslint": "^8.56.0",
+      "vite@^7": "^7",
+      "eslint": "^9.0.0",
       "stylelint": "^16.1.0",
-      "stylelint-config-standard": "^36.0.0"
+      "stylelint-config-standard": "^36.0.0",
+      "react": "^19.0.0",
+      "react-dom": "^19.0.0",
+      "@types/react": "^19.0.0",
+      "@types/react-dom": "^19.0.0"
     }
   }
 }

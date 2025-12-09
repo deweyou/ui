@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json.schemastore.org/stylelintrc.json",
+  "extends": ["@deweyou-ui/config/stylelint"]
+}
+
