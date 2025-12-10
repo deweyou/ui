@@ -4,8 +4,9 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        index: './src/index.css',
-        reset: './src/reset.css',
+        index: './src/index.scss',
+        reset: './src/reset.scss',
+        tokens: './src/tokens/index.scss',
       },
       output: {
         assetFileNames: '[name].css',

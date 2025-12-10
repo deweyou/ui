@@ -18,20 +18,49 @@
     "./reset.css": {
       "import": "./dist/reset.css",
       "require": "./dist/reset.css"
+    },
+    "./tokens.css": {
+      "import": "./dist/tokens.css",
+      "require": "./dist/tokens.css"
+    },
+    "./index.scss": {
+      "import": "./dist/scss/index.scss",
+      "require": "./dist/scss/index.scss"
+    },
+    "./reset.scss": {
+      "import": "./dist/scss/reset.scss",
+      "require": "./dist/scss/reset.scss"
+    },
+    "./tokens/index.scss": {
+      "import": "./dist/scss/tokens/index.scss",
+      "require": "./dist/scss/tokens/index.scss"
+    },
+    "./token.scss": {
+      "import": "./dist/scss/tokens/index.scss",
+      "require": "./dist/scss/tokens/index.scss"
+    },
+    "./tokens.scss": {
+      "import": "./dist/scss/tokens/index.scss",
+      "require": "./dist/scss/tokens/index.scss"
+    },
+    "./tokens/colors.scss": {
+      "import": "./dist/scss/tokens/colors.scss",
+      "require": "./dist/scss/tokens/colors.scss"
     }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "vite build",
-    "lint": "stylelint 'src/**/*.css'",
+    "build": "vite build && node scripts/copy-scss.mjs",
+    "lint": "stylelint 'src/**/*.{css,scss}'",
     "prepublishOnly": "pnpm build"
   },
   "dependencies": {},
   "devDependencies": {
     "vite": "8.0.0-beta.0",
     "stylelint": "*",
+    "sass": "*",
     "@deweyou-ui/config": "workspace:*"
   },
   "publishConfig": {
